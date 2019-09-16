@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Clicker</title>
+        <link href=".\main.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="hideBox" onmouseover="hideDescription()"></div>
+        <div id="head">
+            <a href="#top">Top</a>
+            <a href="#clicker">Clicker</a>
+            <a href="#bottom">Updates</a>
+        </div>
+        <a id="top"></a>
+        <h1 id="welcome">Code Clicker</h1>
+        <p id="intro">Your goal in life is to write the ultimate program. Armed with nothing but a pencil 
+            and paper, you set out to accomplish this mission. Click the button or press the spacebar to 
+            write lines of code. Use lines to recruit helpers that write more lines. Upgrades for each unit unlock
+            at 10, 25, 50, and 100 of each and click upgrades unlock after you have clicked enough times. Crank some code!
+        </p>
+        <div id="clicker">
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="button" id="save" onclick="save(1)">Save</button>
+            <button type="button" id="reset" onclick="reset()">Reset</button>
+            <p id="saveText" style="visibility: hidden">Game Saved!</p>
+            <input type="checkbox" onclick="changeMode()"></input>
+            <label id="mode">Dark Mode</label>
+            <br></br>
+            <script src="script.js"></script>
+            <h2>Lines:</h2>
+            <p id="lines">0</p>
+            <p id="lpcLabel" style="visibility: hidden; margin-left: 10px;">+</p>
+            <p id="lpc" style="visibility: hidden">1</p>
+            <p id="lps" style="visibility: hidden; margin-left: 20px">0</p>
+            <p id="lpsLabel" style="visibility: hidden">Lps</p>
+            <br>
+            <button type="button" onclick="linesUp(-1)" id="linesUp">Crank!</button>
+            <br></br>
+
+            <div id="intern" class="auto" onmouseover="showIntern()" onmouseout="hideDescription()">
+                <p>Interns:</p>
+                <p id="interns" >0</p>
+                <br>
+                <button type="button" disabled id="internsUp"  onclick="internsUp()">Buy</button>
+                <span>Cost:</span>
+                <p class="cost" id="internCost">10</p>
+            </div>
+            <br>
+            
+            <div class="hide" onmouseover="hideDescription()"></div>
+
+            <div id="programmer" class="auto" onmouseover="showProgrammer()" onmouseout="hideDescription()">
+                <p>Programmers:</p>
+                <p id="programmers" >0</p>
+                <br>
+                <button type="button" disabled id="programmersUp" onclick="programmersUp()">Buy</button>
+                <span>Cost:</span>
+                <p class="cost" id="programmerCost">100</p>
+            </div>
+            <br>
+            
+            <div class="hide" onmouseover="hideDescription()"></div>
+
+            <div id="hacker" class="auto" onmouseover="showHacker()" onmouseout="hideDescription()">
+                <p>Hackers:</p>
+                <p id="hackers" >0</p>
+                <br>
+                <button type="button" disabled id="hackersUp" onclick="hackersUp()">Buy</button>
+                <span>Cost:</span>
+                <p class="cost" id="hackerCost">2000</p>
+            </div>
+            <br>
+            <div class="hide" onmouseover="hideDescription()"></div>
+
+            <div id="oracle" class="auto" onmouseover="showOracle()" onmouseout="hideDescription()">
+                <p>Oracles:</p>
+                <p id="oracles" >0</p>
+                <br>
+                <button type="button" disabled id="oraclesUp" onclick="oraclesUp()">Buy</button>
+                <span>Cost:</span>
+                <p class="cost" id="oracleCost">15000</p>
+            </div>
+            <br>
+
+            <div class="hide" onmouseover="hideDescription()"></div>
+
+            <div id="robot" class="auto" onmouseover="showRobot()" onmouseout="hideDescription()">
+                <p>Artificial Intelligence:</p>
+                <p id="robots" >0</p>
+                <br>
+                <button type="button" disabled id="robotsUp" onclick="robotsUp()">Buy</button>
+                <span>Cost:</span>
+                <p class="cost" id="robotCost">100000</p>
+            </div>
+            <br>
+
+            <div class="hide" onmouseover="hideDescription()"></div>
+
+            <div id="clone" class="auto" onmouseover="showClone()" onmouseout="hideDescription()">
+                <p>CloneTech:</p>
+                <p id="clones">0</p>
+                <br>
+                <button type="button" disabled id="clonesUp" onclick="clonesUp()">Buy</button>
+                <span>Cost:</span>
+                <p class="cost" id="cloneCost">500000000</p>
+            </div>
+            
+            <!--Upgrades-->
+            <div id="upgrades">
+                <h2 style="margin-bottom: 10px;">Upgrades:</h2>
+            </div>
+
+            <div id="Cloning">
+                <h2>Cloning:</h2>
+                <p>CloneTechs:</p>
+                <p id="techs">0</p>
+
+                <div id="iClone" class="auto" value="0" onmouseover="showIClone()" onmouseout="hideDescription()">
+                    <p>Type I Clones:</p>
+                    <p id="ic">0</p>
+                    <br>
+                    <input type="number" step="1" min="0" id="iClones">
+                    <span>Cost: 1</span>
+                </div>
+                <br>
+                <div id="pClone" class="auto" value="0" onmouseover="showPClone()" onmouseout="hideDescription()">
+                    <p>Type P Clones:</p>
+                    <p id="pc">0</p>
+                    <br>
+                    <input type="number" step="2" min="0" id="pClones">
+                    <span>Cost: 2</span>
+                </div>
+                <br>
+                <div id="hClone" class="auto" value="0" onmouseover="showHClone()" onmouseout="hideDescription()">
+                    <p>Type H Clones:</p>
+                    <p id="hc">0</p>
+                    <br>
+                    <input type="number" step="5" min="0" id="hClones">
+                    <span>Cost: 5</span>
+                </div>
+                <br>
+                <div id="oClone" class="auto" value="0" onmouseover="showOClone()" onmouseout="hideDescription()">
+                    <p>Type O Clones:</p>
+                    <p id="oc">0</p>
+                    <br>
+                    <input type="number" step="10" min="0" id="oClones">
+                    <span>Cost: 10</span>
+                </div>
+            </div>
+
+            <!--Descriptions-->
+            <div id="desc">
+                 <h2>Description:</h2>
+                <p style="visibility: hidden" id="description">yeet</p>
+            </div>
+        </div>
+        <a id="bottom"></a>
+        <h2>Version History:</h2>
+        <ul>
+            <li>v1.6.3: Fixed glitch with Type H and Type O Clones.</li>
+            <li>v1.6.2: Fixed glitch with worker descriptions after returning to a saved game. </li>
+            <li>v1.6.1: Fixed pricing glitch.</li>
+            <li>v1.6: Big update! Artificial Intelligence now has the research upgrade, which leads to further improvements. The first of these is CloneTech. This upgrade and the ones after it are able to produce workers like interns, programmers, etc. instead of lines.</li>
+            <li>v1.5: Added 4 new upgrades for oracles and an upgrade for hackers.</li>
+            <li>v1.4.2: Fixed issues with buying upgrades that cost over 1 Million and lowered programmer cost.</li>
+            <li>v1.4.1: Fixed dark mode with upgrades.</li>
+            <li>v1.4: Made a dark mode for the site and added two new upgrades for programmers.</li>
+            <li>v1.3.2: Stopped cheaters from using autoclickers.</li>
+            <li>v1.3.1: Fixed the new upgrade and a glitch with the training upgrade description.</li>
+            <li>v1.3: Adjusted upgrade pricing, added a new upgrade, and made upgrade costs abbreviated for large numbers.</li>
+            <li>v1.2.1: Fixed a bug involved with the scratch upgrade.</li>
+            <li>v1.2: Abbreviations for large numbers now apply to every number in the game except for upgrade costs.</li>
+            <li>v1.1: When the number of lines gets large, they are now represented by abbreviations like Million, Billion, Trillion, etc. with 3 decimal points.</li>
+            <li>v1: The first release.</li>
+        </ul>
+    </body>
+</html>
